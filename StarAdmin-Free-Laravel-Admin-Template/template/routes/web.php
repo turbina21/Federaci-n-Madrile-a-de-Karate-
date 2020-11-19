@@ -68,8 +68,11 @@ Route::group(['prefix' => 'charts'], function(){
 });
 
 Route::group(['prefix' => 'tables'], function(){
-    Route::get('basic-table', function () { return view('pages.tables.basic-table'); });
-    Route::get('data-table', function () { return view('pages.tables.data-table'); });
+    Route::resource('aspirantes', 'AspirantesController');
+    Route::resource('casos', 'CasosEspecialesController');
+    Route::resource('convalidaciones', 'ConvalidacionesController');
+    Route::resource('eventos', 'EventosController');
+    Route::resource('examenes', 'ExamenesController');
     Route::get('js-grid', function () { return view('pages.tables.js-grid'); });
     Route::get('sortable-table', function () { return view('pages.tables.sortable-table'); });
 });

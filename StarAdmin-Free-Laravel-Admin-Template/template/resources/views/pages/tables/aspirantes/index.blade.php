@@ -5,68 +5,60 @@
 
 @section('content')
 <div class="row">
-  <div class="col-lg-6 grid-margin stretch-card">
+  <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Basic Table</h4>
-        <p class="card-description"> Add class <code>.table</code> </p>
+        <div class="pull-left" style="text-align: center;">
+          <h4 class="card-title">ASPIRANTES</h4>
+        </div>
+        <div class="pull-right" style="text-align: right;">
+          <a class="btn btn-success" href="{{ route('aspirantes.create') }}"> AÑADIR ASPIRANTE</a>
+        </div>
         <div class="table-responsive">
-          <table class="table">
+          <table class="table table-hover">
             <thead>
               <tr>
-                <th>Profile</th>
-                <th>VatNo.</th>
-                <th>Created</th>
-                <th>Status</th>
+                <th>CÉDULA</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>FECHA DE NACIMIENTO</th>
+                <th>LICENCIA</th>
+                <th>GRADO ACTUAL</th>
+                <th>FECHA GRADO ACTUAL</th>
               </tr>
             </thead>
             <tbody>
+              @foreach ($aspirantes as $aspirante)
               <tr>
-                <td>Jacob</td>
-                <td>53275531</td>
-                <td>12 May 2017</td>
+                <td>{{$aspirante->ASPCEDULA}}</td>
+                <td>{{$aspirante->ASPNOMBRE}}</td>
+                <td>{{$aspirante->ASPAPELLIDO}}</td>
+                <td>{{$aspirante->ASPFECHANACIMIENTO}}</td>
+                <td>{{$aspirante->ASPLICENCIA}}</td>
+                <td>{{$aspirante->ASPGRADOACTUAL}}</td>
+                <td>{{$aspirante->ASPFECHAGRADOACTUAL}}</td>
                 <td>
-                  <label class="badge badge-danger">Pending</label>
+                  <form action="{{ route('aspirantes.destroy',$aspirante->ASPCEDULA) }}" method="POST">
+
+                    <a class="btn btn-info" href="{{ route('aspirantes.show',$aspirante->ASPCEDULA) }}">VER</a>
+
+                    <a class="btn btn-primary" href="{{ route('aspirantes.edit',$aspirante->ASPCEDULA) }}">EDITAR</a>
+
+                    {{ method_field('DELETE')  }}
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                  </form>
                 </td>
               </tr>
-              <tr>
-                <td>Messsy</td>
-                <td>53275532</td>
-                <td>15 May 2017</td>
-                <td>
-                  <label class="badge badge-warning">In progress</label>
-                </td>
-              </tr>
-              <tr>
-                <td>John</td>
-                <td>53275533</td>
-                <td>14 May 2017</td>
-                <td>
-                  <label class="badge badge-info">Fixed</label>
-                </td>
-              </tr>
-              <tr>
-                <td>Peter</td>
-                <td>53275534</td>
-                <td>16 May 2017</td>
-                <td>
-                  <label class="badge badge-success">Completed</label>
-                </td>
-              </tr>
-              <tr>
-                <td>Dave</td>
-                <td>53275535</td>
-                <td>20 May 2017</td>
-                <td>
-                  <label class="badge badge-warning">In progress</label>
-                </td>
-              </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </div>
+  <?php
+  /*
   <div class="col-lg-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
@@ -463,6 +455,7 @@
       </div>
     </div>
   </div>
+  */?>
 </div>
 @endsection
 

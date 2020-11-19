@@ -35,8 +35,6 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-success btn-block">New Project <i class="mdi mdi-plus"></i>
-        </button>
       </div>
     </li>
     <li class="nav-item {{ active_class(['/']) }}">
@@ -45,44 +43,70 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
-    <li class="nav-item {{ active_class(['basic-ui/*']) }}">
-      <a class="nav-link" data-toggle="collapse" href="#basic-ui" aria-expanded="{{ is_active_route(['basic-ui/*']) }}" aria-controls="basic-ui">
-        <i class="menu-icon mdi mdi-dna"></i>
-        <span class="menu-title">Basic UI Elements</span>
+    <li class="nav-item {{ active_class(['tables/*']) }}">
+      <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="{{ is_active_route(['tables/*']) }}" aria-controls="tables">
+        <i class="menu-icon mdi mdi-table-large"></i>
+        <span class="menu-title">Tablas</span>
         <i class="menu-arrow"></i>
       </a>
-      <div class="collapse {{ show_class(['basic-ui/*']) }}" id="basic-ui">
+      <div class="collapse {{ show_class(['tables/*']) }}" id="tables">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item {{ active_class(['basic-ui/buttons']) }}">
-            <a class="nav-link" href="{{ url('/basic-ui/buttons') }}">Buttons</a>
+          <li class="nav-item {{ active_class(['tables/aspirantes']) }}">
+            <a class="nav-link" href="{{ url('/tables/aspirantes') }}">
+              <i class="menu-icon mdi mdi-account"></i>
+              <span class="menu-title">Aspirantes</span>
+            </a>
           </li>
-          <li class="nav-item {{ active_class(['basic-ui/dropdowns']) }}">
-            <a class="nav-link" href="{{ url('/basic-ui/dropdowns') }}">Dropdowns</a>
+          <li class="nav-item {{ active_class(['tables/casos']) }}">
+            <a class="nav-link" href="{{ url('/tables/casos') }}">
+              <i class="menu-icon mdi mdi-account-star"></i>
+              <span class="menu-title">Casos Especiales</span>
+            </a>
           </li>
-          <li class="nav-item {{ active_class(['basic-ui/typography']) }}">
-            <a class="nav-link" href="{{ url('/basic-ui/typography') }}">Typography</a>
+          <li class="nav-item {{ active_class(['tables/convalidaciones']) }}">
+            <a class="nav-link" href="{{ url('/tables/convalidaciones') }}">
+              <i class="menu-icon mdi mdi-account-check"></i>
+              <span class="menu-title">Convalidaciones</span>
+            </a>
+          </li>
+          <li class="nav-item {{ active_class(['tables/eventos']) }}">
+            <a class="nav-link" href="{{ url('/tables/eventos') }}">
+              <i class="menu-icon mdi mdi-calendar-today"></i>
+              <span class="menu-title">Eventos</span>
+            </a>
+          </li>
+          <li class="nav-item {{ active_class(['tables/examenes']) }}">
+            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+              <i class="menu-icon mdi  mdi-certificate"></i>
+              <span class="menu-title">Exámenes</span>
+            </a>
+          </li>
+          <li class="nav-item {{ active_class(['tables/examenes']) }}">
+            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+              <i class="menu-icon mdi mdi-book-multiple"></i>
+              <span class="menu-title">Inscripciones</span>
+            </a>
+          </li>
+          <li class="nav-item {{ active_class(['tables/examenes']) }}">
+            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+              <i class="menu-icon mdi mdi-clipboard-account"></i>
+              <span class="menu-title">Jueces</span>
+            </a>
+          </li>
+          <li class="nav-item {{ active_class(['tables/examenes']) }}">
+            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+              <i class="menu-icon mdi mdi-book-open-variant"></i>
+              <span class="menu-title">Requisitos Administrativos</span>
+            </a>
+          </li>
+          <li class="nav-item {{ active_class(['tables/examenes']) }}">
+            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+              <i class="menu-icon mdi mdi-sitemap"></i>
+              <span class="menu-title">Tribunales</span>
+            </a>
           </li>
         </ul>
       </div>
-    </li>
-
-    <li class="nav-item {{ active_class(['charts/chartjs']) }}">
-      <a class="nav-link" href="{{ url('/charts/chartjs') }}">
-        <i class="menu-icon mdi mdi-chart-line"></i>
-        <span class="menu-title">Charts</span>
-      </a>
-    </li>
-    <li class="nav-item {{ active_class(['tables/basic-table']) }}">
-      <a class="nav-link" href="{{ url('/tables/basic-table') }}">
-        <i class="menu-icon mdi mdi-table-large"></i>
-        <span class="menu-title">Tables</span>
-      </a>
-    </li>
-    <li class="nav-item {{ active_class(['icons/material']) }}">
-      <a class="nav-link" href="{{ url('/icons/material') }}">
-        <i class="menu-icon mdi mdi-emoticon"></i>
-        <span class="menu-title">Icons</span>
-      </a>
     </li>
     <li class="nav-item {{ active_class(['user-pages/*']) }}">
       <a class="nav-link" data-toggle="collapse" href="#user-pages" aria-expanded="{{ is_active_route(['user-pages/*']) }}" aria-controls="user-pages">
@@ -98,17 +122,8 @@
           <li class="nav-item {{ active_class(['user-pages/register']) }}">
             <a class="nav-link" href="{{ url('/user-pages/register') }}">Register</a>
           </li>
-          <li class="nav-item {{ active_class(['user-pages/lock-screen']) }}">
-            <a class="nav-link" href="{{ url('/user-pages/lock-screen') }}">Lock Screen</a>
-          </li>
         </ul>
       </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="https://www.bootstrapdash.com/demo/star-laravel-free/documentation/documentation.html" target="_blank">
-        <i class="menu-icon mdi mdi-file-outline"></i>
-        <span class="menu-title">Documentation</span>
-      </a>
     </li>
   </ul>
 </nav>
