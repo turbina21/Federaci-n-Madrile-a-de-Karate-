@@ -14,7 +14,9 @@ class RequisitosController extends Controller
      */
     public function index()
     {
-        //
+        $requisitos = Requisito::all();
+
+        return view('pages.tables.requisitos.index', compact('requisitos'));
     }
 
     /**
@@ -24,7 +26,7 @@ class RequisitosController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.tables.requisitos.create');
     }
 
     /**
@@ -35,51 +37,108 @@ class RequisitosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'REQCODIGO' => 'bail|required|max:7',
+            'INSCODIGO' => 'bail|required|max:7',
+        ]);
+
+
+        $requisitos = Requisito::create(
+            [
+                'REQCODIGO' => $request->REQCODIGO,
+                'INSCODIGO' => $request->INSCODIGO,
+                'REQFOTOCOPIACARNET' => $this->generateBool($request->REQFOTOCOPIACARNET),
+                'REQFOTOCOPOIACEDULA' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
+                'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
+                'REQSOLICITUD' => $this->generateBool($request->REQSOLICITUD),
+                'REQTRABAJO' => $this->generateBool($request->REQTRABAJO),
+            ]
+        );
+
+
+
+        return redirect()->route('requisitos.index')
+            ->with('success', 'Requisito created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Requisito  $requisito
+     * @param  \App\Requisito  $Requisito
      * @return \Illuminate\Http\Response
      */
-    public function show(Requisito $requisito)
+    public function show($REQCODIGO)
     {
-        //
+        $requisitos = Requisito::findOrFail($REQCODIGO);
+        return view('pages.tables.requisitos.show', compact('requisitos'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Requisito  $requisito
+     * @param  \App\Requisito  $Requisito
      * @return \Illuminate\Http\Response
      */
-    public function edit(Requisito $requisito)
+    public function edit($REQCODIGO)
     {
-        //
+        $requisitos = Requisito::findOrFail($REQCODIGO);
+        return view('pages.tables.requisitos.edit', compact('requisitos'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Requisito  $requisito
+     * @param  \App\Requisito  $Requisito
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Requisito $requisito)
+    public function generateBool($data)
     {
-        //
+        if ($data == 'on') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function update(Request $request, $REQCODIGO)
+    {
+
+        $request->validate([
+            'REQCODIGO' => 'bail|required|max:7',
+            'INSCODIGO' => 'bail|required|max:7',
+        ]);
+
+        $requisitos = Requisito::findOrFail($REQCODIGO);
+
+        $requisitos->update(
+            [
+                'REQCODIGO' => $request->REQCODIGO,
+                'INSCODIGO' => $request->INSCODIGO,
+                'REQFOTOCOPIACARNET' => $this->generateBool($request->REQFOTOCOPIACARNET),
+                'REQFOTOCOPOIACEDULA' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
+                'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
+                'REQSOLICITUD' => $this->generateBool($request->REQSOLICITUD),
+                'REQTRABAJO' => $this->generateBool($request->REQTRABAJO),
+            ]
+        );
+
+        return redirect()->route('requisitos.index')
+            ->with('success', 'Requisito updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Requisito  $requisito
+     * @param  \App\Requisito  $Requisito
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Requisito $requisito)
+    public function destroy($REQCODIGO)
     {
-        //
+        $requisitos = Requisito::findOrFail($REQCODIGO);
+        $requisitos->delete();
+
+        return redirect()->route('requisitos.index')
+            ->with('success', 'Requisito deleted successfully');
     }
 }

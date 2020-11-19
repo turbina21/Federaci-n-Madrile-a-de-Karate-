@@ -81,26 +81,26 @@
               <span class="menu-title">Exámenes</span>
             </a>
           </li>
-          <li class="nav-item {{ active_class(['tables/examenes']) }}">
-            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+          <li class="nav-item {{ active_class(['tables/inscripciones']) }}">
+            <a class="nav-link" href="{{ url('/tables/inscripciones') }}">
               <i class="menu-icon mdi mdi-book-multiple"></i>
               <span class="menu-title">Inscripciones</span>
             </a>
           </li>
-          <li class="nav-item {{ active_class(['tables/examenes']) }}">
-            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+          <li class="nav-item {{ active_class(['tables/jueces']) }}">
+            <a class="nav-link" href="{{ url('/tables/jueces') }}">
               <i class="menu-icon mdi mdi-clipboard-account"></i>
               <span class="menu-title">Jueces</span>
             </a>
           </li>
-          <li class="nav-item {{ active_class(['tables/examenes']) }}">
-            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+          <li class="nav-item {{ active_class(['tables/requisitos']) }}">
+            <a class="nav-link" href="{{ url('/tables/requisitos') }}">
               <i class="menu-icon mdi mdi-book-open-variant"></i>
               <span class="menu-title">Requisitos Administrativos</span>
             </a>
           </li>
-          <li class="nav-item {{ active_class(['tables/examenes']) }}">
-            <a class="nav-link" href="{{ url('/tables/examenes') }}">
+          <li class="nav-item {{ active_class(['tables/tribunales']) }}">
+            <a class="nav-link" href="{{ url('/tables/tribunales') }}">
               <i class="menu-icon mdi mdi-sitemap"></i>
               <span class="menu-title">Tribunales</span>
             </a>

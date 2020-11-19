@@ -73,8 +73,10 @@ Route::group(['prefix' => 'tables'], function(){
     Route::resource('convalidaciones', 'ConvalidacionesController');
     Route::resource('eventos', 'EventosController');
     Route::resource('examenes', 'ExamenesController');
-    Route::get('js-grid', function () { return view('pages.tables.js-grid'); });
-    Route::get('sortable-table', function () { return view('pages.tables.sortable-table'); });
+    Route::resource('inscripciones', 'InscripcionesController');
+    Route::resource('jueces', 'JuecesController');
+    Route::resource('requisitos', 'RequisitosController');
+    Route::resource('tribunales', 'TribunalesController');
 });
 
 Route::get('notifications', function () {

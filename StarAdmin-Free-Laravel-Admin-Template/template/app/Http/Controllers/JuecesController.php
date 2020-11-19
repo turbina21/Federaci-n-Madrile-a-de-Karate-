@@ -14,7 +14,9 @@ class JuecesController extends Controller
      */
     public function index()
     {
-        //
+        $jueces = Juez::all();
+
+        return view('pages.tables.jueces.index', compact('jueces'));
     }
 
     /**
@@ -24,7 +26,7 @@ class JuecesController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.tables.jueces.create');
     }
 
     /**
@@ -35,51 +37,104 @@ class JuecesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'JUECEDULA' => 'bail|required|max:7',
+            'TRICODIGO' => 'bail|required|max:7',
+            'JUENOMBRE' => 'bail|required|max:50',
+        ]);
+
+
+        $jueces = Juez::create(
+            [
+                'JUECEDULA' => $request->JUECEDULA,
+                'TRICODIGO' => $request->TRICODIGO,
+                'JUENOMBRE' => $request->JUENOMBRE,
+                'JUEDIPLOMA' => $this->generateBool($request->JUEDIPLOMA),
+            ]
+        );
+
+
+
+        return redirect()->route('jueces.index')
+            ->with('success', 'Juez created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Juez  $juez
+     * @param  \App\Juez  $Juez
      * @return \Illuminate\Http\Response
      */
-    public function show(Juez $juez)
+    public function show($JUECEDULA)
     {
-        //
+        $jueces = Juez::findOrFail($JUECEDULA);
+        return view('pages.tables.jueces.show', compact('jueces'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Juez  $juez
+     * @param  \App\Juez  $Juez
      * @return \Illuminate\Http\Response
      */
-    public function edit(Juez $juez)
+    public function edit($JUECEDULA)
     {
-        //
+        $jueces = Juez::findOrFail($JUECEDULA);
+        return view('pages.tables.jueces.edit', compact('jueces'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Juez  $juez
+     * @param  \App\Juez  $Juez
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Juez $juez)
+    public function generateBool($data)
     {
-        //
+        if ($data == 'on') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function update(Request $request, $JUECEDULA)
+    {
+
+        $request->validate([
+            'JUECEDULA' => 'bail|required|max:7',
+            'TRICODIGO' => 'bail|required|max:7',
+            'JUENOMBRE' => 'bail|required|max:50',
+        ]);
+
+        $jueces = Juez::findOrFail($JUECEDULA);
+
+        $jueces->update(
+            [
+                'JUECEDULA' => $request->JUECEDULA,
+                'TRICODIGO' => $request->TRICODIGO,
+                'JUENOMBRE' => $request->JUENOMBRE,
+                'JUEDIPLOMA' => $this->generateBool($request->JUEDIPLOMA),
+            ]
+        );
+
+        return redirect()->route('jueces.index')
+            ->with('success', 'Juez updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Juez  $juez
+     * @param  \App\Juez  $Juez
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Juez $juez)
+    public function destroy($JUECEDULA)
     {
-        //
+        $jueces = Juez::findOrFail($JUECEDULA);
+        $jueces->delete();
+
+        return redirect()->route('jueces.index')
+            ->with('success', 'Juez deleted successfully');
     }
 }
