@@ -42,7 +42,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>TRIBUNAL CÓDIGO:</strong>
+                <strong>CÓDIGO TRIBUNAL:</strong>
                 <input type="text" name="TRICODIGO" value="{{ $examenes->TRICODIGO}}" class="form-control" placeholder="Impedimento Físico">
             </div>
         </div>
@@ -85,7 +85,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>OBSERVACIONES:</strong>
-                <textarea type="text" name="EXABLOQUEESPECIFICO" value="{{ $examenes->EXABLOQUEESPECIFICO }}" class="form-control" placeholder="Informe"></textarea>
+                <input type="text" name="EXAOBSERVACIONES" value="{{ $examenes->EXAOBSERVACIONES }}" class="form-control" placeholder="Informe"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

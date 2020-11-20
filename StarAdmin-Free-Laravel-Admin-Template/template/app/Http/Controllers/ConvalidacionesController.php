@@ -39,7 +39,6 @@ class ConvalidacionesController extends Controller
     {
         $request->validate([
             'CONCODIGO' => 'bail|required|max:7',
-            'INSCODIGO' => 'bail|required|max:7',
             'CONPAIS' => 'bail|required|max:30',
             'CONTIEMPOPERMANENCIA' => 'bail|required|',
         ]);
@@ -48,7 +47,6 @@ class ConvalidacionesController extends Controller
         $convalidaciones = Convalidacion::create(
             [
                 'CONCODIGO' => $request->CONCODIGO,
-                'INSCODIGO' => $request->INSCODIGO,
                 'CONPAIS' => $request->CONPAIS,
                 'CONTIEMPOPERMANENCIA' => $request->CONTIEMPOPERMANENCIA,
                 'CONCURRICULUMVISADO' => $this->generateBool($request->CONCURRICULUMVISADO),
@@ -109,7 +107,6 @@ class ConvalidacionesController extends Controller
 
         $request->validate([
             'CONCODIGO' => 'bail|required|max:7',
-            'INSCODIGO' => 'bail|required|max:7',
             'CONPAIS' => 'bail|required|max:30',
             'CONTIEMPOPERMANENCIA' => 'bail|required|',
         ]);
@@ -119,7 +116,6 @@ class ConvalidacionesController extends Controller
         $convalidaciones->update(
             [
                 'CONCODIGO' => $request->CONCODIGO,
-                'INSCODIGO' => $request->INSCODIGO,
                 'CONPAIS' => $request->CONPAIS,
                 'CONTIEMPOPERMANENCIA' => $request->CONTIEMPOPERMANENCIA,
                 'CONCURRICULUMVISADO' => $this->generateBool($request->CONCURRICULUMVISADO),

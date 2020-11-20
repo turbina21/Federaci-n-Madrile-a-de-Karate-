@@ -42,6 +42,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>CÓDIGO REQUISITO:</strong>
+                <input type="text" name="REQCODIGO" value="{{ $inscripciones->REQCODIGO}}" class="form-control" placeholder="Apellido">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>CÓDIGO CONVALIDACIÓN:</strong>
                 <input type="text" name="CONCODIGO" value="{{ $inscripciones->CONCODIGO}}" class="form-control" placeholder="Apellido">
             </div>

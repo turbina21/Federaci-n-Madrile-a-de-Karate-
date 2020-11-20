@@ -10,6 +10,6 @@ class Evento extends Model
     protected $primaryKey = 'EVECODIGO';
     public $incrementing = false;
     protected $fillable = [
-        'EVECODIGO', 'EVEFECHA', 'EVELUGAR'
+        'EVECODIGO', 'EVEFECHA','EVEHORA', 'EVELUGAR'
     ];
 }

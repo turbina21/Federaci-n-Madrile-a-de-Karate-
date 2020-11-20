@@ -42,18 +42,20 @@ class ExamenesController extends Controller
             'EVECODIGO' => 'bail|required|max:7',
             'TRICODIGO' => 'bail|required|max:7',
             'EXACATEGORIA' => 'bail|required|',
-            'EXAOBSERVACIONES' => 'bail|required|150',
+            'EXAOBSERVACIONES' => 'bail|required',
         ]);
 
 
         $examenes = Examen::create(
             [
                 'EXACODIGO' => $request->EXACODIGO,
+                'EVECODIGO' => $request->EVECODIGO,
+                'TRICODIGO' => $request->TRICODIGO,
                 'EXACATEGORIA' => $request->EXACATEGORIA,
                 'EXACALIFICACIONTOTAL' => $this->generateBool($request->EXACALIFICACIONTOTAL),
                 'EXABLOQUECOMUN' => $this->generateBool($request->EXABLOQUECOMUN),
                 'EXABLOQUEESPECIFICO' => $this->generateBool($request->EXABLOQUEESPECIFICO),
-                'EXAOBSERVACIONES' => $request->EXACODIGO,
+                'EXAOBSERVACIONES' => $request->EXAOBSERVACIONES,
             ]
         );
 
@@ -111,7 +113,7 @@ class ExamenesController extends Controller
             'EVECODIGO' => 'bail|required|max:7',
             'TRICODIGO' => 'bail|required|max:7',
             'EXACATEGORIA' => 'bail|required|',
-            'EXAOBSERVACIONES' => 'bail|required|150',
+            'EXAOBSERVACIONES' => 'bail|required',
         ]);
 
         $examenes = Examen::findOrFail($EXACODIGO);
@@ -125,7 +127,7 @@ class ExamenesController extends Controller
                 'EXACALIFICACIONTOTAL' => $this->generateBool($request->EXACALIFICACIONTOTAL),
                 'EXABLOQUECOMUN' => $this->generateBool($request->EXABLOQUECOMUN),
                 'EXABLOQUEESPECIFICO' => $this->generateBool($request->EXABLOQUEESPECIFICO),
-                'EXAOBSERVACIONES' => $request->EXACODIGO,
+                'EXAOBSERVACIONES' => $request->EXAOBSERVACIONES,
             ]
         );
 

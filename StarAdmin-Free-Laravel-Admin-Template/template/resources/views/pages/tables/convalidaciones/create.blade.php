@@ -35,12 +35,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>CÓDIGO INSCRIPCIÓN:</strong>
-                <input type="text" name="INSCODIGO" class="form-control" placeholder="Código Inscripción">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>PAÍS:</strong>
                 <input type="text" name="CONPAIS" class="form-control" placeholder="PAÍS">
             </div>

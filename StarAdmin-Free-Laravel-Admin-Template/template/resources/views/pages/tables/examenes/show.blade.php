@@ -39,19 +39,19 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>CALIFICACIÓN TOTAL:</strong>
-            {{ $examenes->CALIFICACIONTOTAL }}
+            {{ $examenes->EXACALIFICACIONTOTAL }}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>BLOQUE COMÚN:</strong>
-            {{ $examenes->EXABLOQUECOMÚN }}
+            {{ $examenes->EXABLOQUECOMUN }}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>BLOQUE ESPECÍFICO:</strong>
-            {{$examenes->BLOQUEESPECÍFICO}}           
+            {{$examenes->BLOQUEESPECIFICO}}           
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">

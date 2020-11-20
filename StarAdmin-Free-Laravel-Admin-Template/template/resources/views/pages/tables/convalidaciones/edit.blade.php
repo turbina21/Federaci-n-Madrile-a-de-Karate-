@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>EDITAR CONVALIDACIONESS</h2>
+            <h2>EDITAR CONVALIDACIONES</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('convalidaciones.index') }}"> REGRESAR</a>
@@ -32,12 +32,6 @@
             <div class="form-group">
                 <strong>CÓDIGO:</strong>
                 <input type="text" name="CONCODIGO" value="{{ $convalidaciones->CONCODIGO }}" class="form-control" placeholder="Código">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>CÓDIGO INSCRIPCIÓN:</strong>
-                <input type="text" name="INSCODIGO" value="{{ $convalidaciones->INSCODIGO }}" class="form-control" placeholder="Código Inscripción">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

@@ -36,12 +36,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>CÓDIGO INSCRIPCIÓN:</strong>
-                <input type="text" name="INSCODIGO" value="{{ $requisitos->INSCODIGO }}" class="form-control" placeholder="Código Inscripción">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>FOTOCOPIA CARNET:</strong>
                 <input type="checkbox" name="REQFOTOCOPIACARNET" value="{{ $requisitos->REQFOTOCOPIACARNET }}" class="form-control" placeholder="Curriculum Visado">
             </div>

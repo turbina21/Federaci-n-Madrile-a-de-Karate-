@@ -19,7 +19,6 @@
             <thead>
               <tr>
                 <th>CÓDIGO</th>
-                <th>CÓDIGO DE INSCRIPCIÓN</th>
                 <th>FOTOCOPIA CARNET</th>
                 <th>FOTOCOPOIA CÉDULA</th>
                 <th>FOTOGRAFÍAS</th>
@@ -31,9 +30,8 @@
               @foreach ($requisitos as $requisito)
               <tr>
                 <td>{{$requisito->REQCODIGO}}</td>
-                <td>{{$requisito->INSCODIGO}}</td>
-                <td>{{$requisito->REQFOTOCOPOIACARNET}}</td>
-                <td>{{$requisito->REQFOTOCOPOIACEDULA}}</td>
+                <td>{{$requisito->REQFOTOCOPIACARNET}}</td>
+                <td>{{$requisito->REQFOTOCOPIACEDULA}}</td>
                 <td>{{$requisito->REQFOTOGRAFIAS}}</td>
                 <td>{{$requisito->REQSOLICITUD}}</td>
                 <td>{{$requisito->REQTRABAJO}}</td>

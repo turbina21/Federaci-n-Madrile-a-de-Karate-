@@ -10,6 +10,6 @@ class Caso extends Model
     protected $primaryKey = 'CASCODIGO';
     public $incrementing = false;
     protected $fillable = [
-        'CASCODIGO','INSCODIGO', 'CASIMPEDIMENTOFISICO', 'CASCERTIFICADOMEDICO', 'CASINFORME'
+        'CASCODIGO', 'CASIMPEDIMENTOFISICO', 'CASCERTIFICADOMEDICO', 'CASASCENSOS','CASOBSERVACION'
     ];
 }

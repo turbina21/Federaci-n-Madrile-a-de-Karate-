@@ -39,14 +39,12 @@ class RequisitosController extends Controller
     {
         $request->validate([
             'REQCODIGO' => 'bail|required|max:7',
-            'INSCODIGO' => 'bail|required|max:7',
         ]);
 
 
         $requisitos = Requisito::create(
             [
                 'REQCODIGO' => $request->REQCODIGO,
-                'INSCODIGO' => $request->INSCODIGO,
                 'REQFOTOCOPIACARNET' => $this->generateBool($request->REQFOTOCOPIACARNET),
                 'REQFOTOCOPOIACEDULA' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
                 'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
@@ -106,7 +104,6 @@ class RequisitosController extends Controller
 
         $request->validate([
             'REQCODIGO' => 'bail|required|max:7',
-            'INSCODIGO' => 'bail|required|max:7',
         ]);
 
         $requisitos = Requisito::findOrFail($REQCODIGO);
@@ -114,7 +111,6 @@ class RequisitosController extends Controller
         $requisitos->update(
             [
                 'REQCODIGO' => $request->REQCODIGO,
-                'INSCODIGO' => $request->INSCODIGO,
                 'REQFOTOCOPIACARNET' => $this->generateBool($request->REQFOTOCOPIACARNET),
                 'REQFOTOCOPOIACEDULA' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
                 'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOCOPOIACEDULA),

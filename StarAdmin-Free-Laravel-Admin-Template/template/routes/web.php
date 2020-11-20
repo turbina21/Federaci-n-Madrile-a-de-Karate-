@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('dashboard');
 });
+Route::resource('login', 'LoginController');
+
+Route::get('register', function () {
+    return view('auth.register');
+});
 
 // Route::get('/','DashboardController@index');
 
@@ -144,3 +149,6 @@ Route::get('/clear-cache', function() {
 Route::any('/{page?}',function(){
     return View::make('pages.error-pages.error-404');
 })->where('page','.*');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

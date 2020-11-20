@@ -20,9 +20,9 @@
               <tr>
                 <th>CÓDIGO</th>
                 <th>CÓDIGO DE EXÁMEN</th>
-                <th>CÓDIGO DE REUISITO</th>
+                <th>CÓDIGO DE REQUISITO</th>
                 <th>CÓDIGO DE CONVALIDACIÓN</th>
-                <th>CÉDULA DE inscripcion</th>
+                <th>CÉDULA DE ASPIRANTE</th>
                 <th>CÓDIGO CASO ESPECIAL</th>
                 <th>FECHA DE INSCIPCIÓN</th>
                 <th>GRADO</th>
@@ -35,7 +35,7 @@
                 <td>{{$inscripcion->EXACODIGO}}</td>
                 <td>{{$inscripcion->REQCODIGO}}</td>
                 <td>{{$inscripcion->CONCODIGO}}</td>
-                <td>{{$inscripcion->INSCODIGO}}</td>
+                <td>{{$inscripcion->ASPCEDULA}}</td>
                 <td>{{$inscripcion->CASCODIGO}}</td>
                 <td>{{$inscripcion->INSFECHA}}</td>
                 <td>{{$inscripcion->INSGRADO}}</td>

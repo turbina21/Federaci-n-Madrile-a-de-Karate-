@@ -45,20 +45,20 @@ class CasosEspecialesController extends Controller
     }
     public function store(Request $request)
     {
-
         $request->validate([
             'CASCODIGO' => 'bail|required|max:7',
-            'INSCODIGO' => 'bail|required|max:7',
-            'CASIMPEDIMENTOFISICO' => 'bail|required|max:30',
+            'CASIMPEDIMENTOFISICO' => 'bail|nullable|max:30',
+            'CASASCENSOS' => 'bail|nullable',
+            'CASOBSERVACION' => 'bail|required',
         ]);
 
         $casos = Caso::create(
             [
                 'CASCODIGO' => $request->CASCODIGO,
-                'INSCODIGO' => $request->INSCODIGO,
                 'CASIMPEDIMENTOFISICO' => $request->CASCODIGO,
                 'CASCERTIFICADOMEDICO' => $this->generateBool($request->CASCERTIFICADOMEDICO),
-                'CASINFORME' => $this->generateBool($request->CASINFORME),
+                'CASASCENSOS' =>$request->CASASCENSOS,
+                'CASOBSERVACION' =>$request->CASOBSERVACION,
             ]
         );
 
@@ -103,17 +103,18 @@ class CasosEspecialesController extends Controller
 
         $request->validate([
             'CASCODIGO' => 'bail|required|max:7',
-            'INSCODIGO' => 'bail|required|max:7',
-            'CASIMPEDIMENTOFISICO' => 'bail|required|max:30',
+            'CASIMPEDIMENTOFISICO' => 'bail|nullable|max:30',
+            'CASASCENSOS' => 'bail|nullable',
+            'CASOBSERVACION' => 'bail|required',
         ]);
 
         $casos = Caso::findOrFail($CASCODIGO);
         $casos->update([
             'CASCODIGO' => $request->CASCODIGO,
-            'INSCODIGO' => $request->INSCODIGO,
             'CASIMPEDIMENTOFISICO' => $request->CASCODIGO,
             'CASCERTIFICADOMEDICO' => $this->generateBool($request->CASCERTIFICADOMEDICO),
-            'CASINFORME' => $this->generateBool($request->CASINFORME),
+            'CASASCENSOS' =>$request->CASASCENSOS,
+            'CASOBSERVACION' =>$request->CASOBSERVACION,
         ]);
 
         return redirect()->route('casos.index')

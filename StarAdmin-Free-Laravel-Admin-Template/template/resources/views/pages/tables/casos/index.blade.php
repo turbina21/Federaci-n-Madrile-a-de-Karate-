@@ -19,10 +19,10 @@
             <thead>
               <tr>
                 <th>CÓDIGO</th>
-                <th>CÓDIGO DE INSCRIPCIÓN</th>
                 <th>IMPEDIMENTO FÍSICO</th>
                 <th>CERTIFICADO MÉDICO</th>
-                <th>INFORME</th>
+                <th>ASCENSOS</th>
+                <th>OBSERVACIONES</th>
               </tr>
             </thead>
             <tbody>
@@ -31,7 +31,8 @@
                 <td>{{$caso->CASCODIGO}}</td>
                 <td>{{$caso->CASIMPEDIMENTOFISICO}}</td>
                 <td>{{$caso->CASCERTIFICADOMEDICO}}</td>
-                <td>{{$caso->CASINFORME}}</td>
+                <td>{{$caso->CASASCENSOS}}</td>
+                <td>{{$caso->CASOBSERVACION}}</td>
                 <td>
                   <form action="{{ route('casos.destroy',$caso->CASCODIGO) }}" method="POST">
 

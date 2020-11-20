@@ -10,7 +10,7 @@ class Convalidacion extends Model
     protected $primaryKey = 'CONCODIGO';
     public $incrementing = false;
     protected $fillable = [
-        'CONCODIGO','INSCODIGO', 'CONPAIS', 'CONTIEMPOPERMANENCIA', 'CONCURRICULUMVISADO',
+        'CONCODIGO', 'CONPAIS', 'CONTIEMPOPERMANENCIA', 'CONCURRICULUMVISADO',
         'CONACREDITACION','CONCOPIATITULOS','CONPLANESTUDIO'
     ];
 }

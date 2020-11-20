@@ -42,6 +42,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>HORA:</strong>
+                <input type="time" name="EVEHORA" value="{{ $eventos->EVEHORA }}" class="form-control" placeholder="Fecha">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>LUGAR:</strong>
                 <input type="text" name="EVELUGAR" value="{{ $eventos->EVELUGAR}}" class="form-control" placeholder="Lugar">
             </div>

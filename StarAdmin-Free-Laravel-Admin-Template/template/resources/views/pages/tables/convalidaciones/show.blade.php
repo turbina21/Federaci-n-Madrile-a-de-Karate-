@@ -20,12 +20,6 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>CÓDIGO INSCRIPCIÓN:</strong>
-            {{ $convalidaciones->INSCODIGO }}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
             <strong>PAÍS:</strong>
             {{ $convalidaciones->CONPAIS }}
         </div>

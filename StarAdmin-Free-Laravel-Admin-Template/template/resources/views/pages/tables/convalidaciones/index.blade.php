@@ -19,7 +19,6 @@
             <thead>
               <tr>
                 <th>CÓDIGO</th>
-                <th>CÓDIGO DE INSCRIPCIÓN</th>
                 <th>TIEMPO DE PERMANENCIA</th>
                 <th>CURRICULUM VISADO</th>
                 <th>ACREDITACIÓN</th>
@@ -31,7 +30,6 @@
               @foreach ($convalidaciones as $convalidacion)
               <tr>
                 <td>{{$convalidacion->CONCODIGO}}</td>
-                <td>{{$convalidacion->INSCODIGO}}</td>
                 <td>{{$convalidacion->CONPAIS}}</td>
                 <td>{{$convalidacion->CONTIEMPOPERMANENCIA}}</td>
                 <td>{{$convalidacion->CONCURRICULUMVISADO}}</td>

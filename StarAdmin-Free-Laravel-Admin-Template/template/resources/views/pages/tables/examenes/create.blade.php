@@ -78,7 +78,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>OBSERVACIONES:</strong>
-                <textarea type="checkbox" name="EXAOBSERVACIONES" class="form-control" placeholder="Informe"></textarea>
+                <input type="text" name="EXAOBSERVACIONES" class="form-control" placeholder="Informe"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

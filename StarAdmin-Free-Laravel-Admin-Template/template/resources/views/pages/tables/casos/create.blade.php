@@ -35,12 +35,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>CÓDIGO INSCRIPCIÓN:</strong>
-                <input type="text" name="INSCODIGO" class="form-control" placeholder="Código Inscripción">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>IMPEDIMENTO FÍSICO:</strong>
                 <input type="text" name="CASIMPEDIMENTOFISICO" class="form-control" placeholder="Impedimento Físico">
             </div>
@@ -53,8 +47,14 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>INFORME:</strong>
-                <input type="checkbox" name="CASINFORME" class="form-control" placeholder="Informe">
+                <strong>ASCENSOS:</strong>
+                <input type="text" name="CASASCENSOS" class="form-control" placeholder="Informe">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>OBSERVACIONES:</strong>
+                <input type="text" name="CASOBSERVACION" class="form-control" placeholder="Informe"></input>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

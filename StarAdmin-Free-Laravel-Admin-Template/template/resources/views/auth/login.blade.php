@@ -5,8 +5,9 @@
   <div class="row w-100">
     <div class="col-lg-4 mx-auto">
       <div class="auto-form-wrapper">
-        <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-          <div class="form-group">
+        <form class="form-horizontal" method="POST" action="{{ route('/dashboard') }}">
+        {{ csrf_field() }}  
+        <div class="form-group">
             <label class="label">Username</label>
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Username">
@@ -44,7 +45,7 @@
           </div>
           <div class="text-block text-center my-3">
             <span class="text-small font-weight-semibold">Not a member ?</span>
-            <a href="{{ url('/user-pages/register') }}" class="text-black text-small">Create new account</a>
+            <a href="{{ url('/register') }}" class="text-black text-small">Create new account</a>
           </div>
         </form>
       </div>

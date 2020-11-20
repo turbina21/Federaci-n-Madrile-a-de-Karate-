@@ -10,7 +10,7 @@ class Requisito extends Model
     protected $primaryKey = 'REQCODIGO';
     public $incrementing = false;
     protected $fillable = [
-        'REQCODIGO','INSCODIGO', 'REQFOTOCOPIACARNET', 'REQFOTOCOPOIACEDULA', 'REQFOTOGRAFIAS',
+        'REQCODIGO', 'REQFOTOCOPIACARNET', 'REQFOTOCOPOIACEDULA', 'REQFOTOGRAFIAS',
         'REQSOLICITUD','REQTRABAJO'
     ];
 }

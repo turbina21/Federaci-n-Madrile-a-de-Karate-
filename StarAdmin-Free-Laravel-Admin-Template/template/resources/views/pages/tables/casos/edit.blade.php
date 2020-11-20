@@ -36,12 +36,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>CÓDIGO INSCRIPCIÓN:</strong>
-                <input type="text" name="INSCODIGO" value="{{ $casos->INSCODIGO }}" class="form-control" placeholder="Código Inscripción">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>IMPEDIMENTO FÍSICO:</strong>
                 <input type="text" name="CASIMPEDIMENTOFISICO" value="{{ $casos->CASIMPEDIMENTOFISICO}}" class="form-control" placeholder="Impedimento Físico">
             </div>
@@ -54,8 +48,14 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>INFORME:</strong>
-                <input type="text" name="CASINFORME" value="{{ $casos->CASINFORME }}" class="form-control" placeholder="Informe">
+                <strong>ASCENSOS:</strong>
+                <input type="text" name="CASASCENSOS" value="{{ $casos->CASASCENSOS }}" class="form-control" placeholder="Informe">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>OBSERVACIONES:</strong>
+                <input type="text" name="CASOBSERVACION" value="{{ $casos->CASOBSERVACION }}" class="form-control" placeholder="Informe"></input>
             </div>
         </div>
 

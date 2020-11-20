@@ -40,6 +40,7 @@ class EventosController extends Controller
         $request->validate([
             'EVECODIGO' => 'bail|required|max:7',
             'EVEFECHA' => 'bail|required|',
+            'EVEHORA' => 'bail|required|',
             'EVELUGAR' => 'bail|required|max:30',
         ]);
 
@@ -87,6 +88,7 @@ class EventosController extends Controller
         $request->validate([
             'EVECODIGO' => 'bail|required|max:7',
             'EVEFECHA' => 'bail|required|',
+            'EVEHORA' => 'bail|required|',
             'EVELUGAR' => 'bail|required|max:30',
         ]);
         

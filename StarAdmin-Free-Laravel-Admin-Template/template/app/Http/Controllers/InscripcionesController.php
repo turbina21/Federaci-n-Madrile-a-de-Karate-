@@ -40,10 +40,10 @@ class InscripcionesController extends Controller
         $request->validate([
             'INSCODIGO' => 'bail|required|max:7',
             'EXACODIGO' => 'bail|required|max:7',
-            'REQCODIGO' => 'bail|required|max:7',
-            'CONCODIGO' => 'bail|required|max:7',
+            'REQCODIGO' => 'bail|max:7|nullable',
+            'CONCODIGO' => 'bail|max:7|nullable',
             'ASCEDULA' => 'bail|required|max:13',
-            'CASCODIGO' => 'bail|required|max:7',
+            'CASCODIGO' => 'bail|max:7|nullable',
             'INSFECHA' => 'bail|required',
             'INSGRADO' => 'bail|required|max:20',
         ]);
@@ -92,10 +92,10 @@ class InscripcionesController extends Controller
         $request->validate([
             'INSCODIGO' => 'bail|required|max:7',
             'EXACODIGO' => 'bail|required|max:7',
-            'REQCODIGO' => 'bail|required|max:7',
-            'CONCODIGO' => 'bail|required|max:7',
+            'REQCODIGO' => 'bail|max:7|nullable',
+            'CONCODIGO' => 'bail|max:7|nullable',
             'ASCEDULA' => 'bail|required|max:13',
-            'CASCODIGO' => 'bail|required|max:7',
+            'CASCODIGO' => 'bail|max:7|nullable',
             'INSFECHA' => 'bail|required',
             'INSGRADO' => 'bail|required|max:20',
         ]);

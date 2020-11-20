@@ -20,12 +20,6 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>CÓDIGO INSCRIPCIÓN:</strong>
-            {{ $casos->INSCÓDIGO }}
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
             <strong>IMPEDIMENTO FÍSICO:</strong>
             {{ $casos->CASIMPEDIMENTOFISICO }}
         </div>
@@ -38,8 +32,14 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>INFORME:</strong>
-            {{ $casos->CASINFORME }}
+            <strong>ASCENSOS:</strong>
+            {{ $casos->CASASCENSOS}}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>OBSERVACIONES:</strong>
+            {{ $casos->CASOBSERVACION}}
         </div>
     </div>
 </div>

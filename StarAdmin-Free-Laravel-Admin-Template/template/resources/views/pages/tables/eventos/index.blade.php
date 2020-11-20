@@ -20,6 +20,7 @@
               <tr>
                 <th>CÓDIGO</th>
                 <th>FECHA</th>
+                <th>HORA</th>
                 <th>LUGAR</th>
               </tr>
             </thead>
@@ -28,6 +29,7 @@
               <tr>
                 <td>{{$evento->EVECODIGO}}</td>
                 <td>{{$evento->EVEFECHA}}</td>
+                <td>{{$evento->EVEHORA}}</td>
                 <td>{{$evento->EVELUGAR}}</td>
                 <td>
                   <form action="{{ route('eventos.destroy',$evento->EVECODIGO) }}" method="POST">
