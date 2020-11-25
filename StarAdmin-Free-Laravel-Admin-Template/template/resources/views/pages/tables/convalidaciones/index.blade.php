@@ -19,6 +19,7 @@
             <thead>
               <tr>
                 <th>CÓDIGO</th>
+                <th>PAÍS</th>
                 <th>TIEMPO DE PERMANENCIA</th>
                 <th>CURRICULUM VISADO</th>
                 <th>ACREDITACIÓN</th>
@@ -32,10 +33,62 @@
                 <td>{{$convalidacion->CONCODIGO}}</td>
                 <td>{{$convalidacion->CONPAIS}}</td>
                 <td>{{$convalidacion->CONTIEMPOPERMANENCIA}}</td>
-                <td>{{$convalidacion->CONCURRICULUMVISADO}}</td>
-                <td>{{$convalidacion->CONACREDITACION}}</td>
-                <td>{{$convalidacion->CONCOPIATITULOS}}</td>
-                <td>{{$convalidacion->CONPLANESTUDIO}}</td>
+                @php
+                $aux1='';
+                $label1='';
+                if($convalidacion->CONCURRICULUMVISADO==1){
+                $aux1='badge-success';
+                $label1='SÍ';
+                }else{
+                $aux1='badge-danger';
+                $label1='NO';
+                }
+                @endphp 
+                <td style="text-align: center; font-size:20px;">
+                  <label class="badge <?php echo ($aux1) ?>">{{$label1}}</label>
+                </td>
+                @php
+                $aux2='';
+                $label2='';
+                if($convalidacion->CONACREDITACION==1){
+                $aux2='badge-success';
+                $label2='SÍ';
+                }else{
+                $aux2='badge-danger';
+                $label2='NO';
+                }
+                @endphp
+                <td style="text-align: center; font-size:20px;">
+                  <label class="badge <?php echo ($aux2) ?>">{{$label2}}</label>
+                </td>
+                @php
+                $aux3='';
+                $label3='';
+                if($convalidacion->CONCOPIATITULOS==1){
+                $aux3='badge-success';
+                $label3='SÍ';
+                }else{
+                $aux3='badge-danger';
+                $label3='NO';
+                }
+                @endphp
+                <td style="text-align: center; font-size:20px;">
+                  <label class="badge <?php echo ($aux3) ?>">{{$label3}}</label>
+                </td>
+                @php
+                $aux4='';
+                $label4='';
+                if($convalidacion->CONPLANESTUDIO==1){
+                $aux4='badge-success';
+                $label4='SÍ';
+                }else{
+                $aux4='badge-danger';
+                $label4='NO';
+                }
+                @endphp
+                <td style="text-align: center; font-size:20px;">
+                  <label class="badge <?php echo ($aux4) ?>">{{$label4}}</label>
+                </td>
                 <td>
                   <form action="{{ route('convalidaciones.destroy',$convalidacion->CONCODIGO) }}" method="POST">
 
@@ -454,7 +507,7 @@
       </div>
     </div>
   </div>
-  */?>
+  */ ?>
 </div>
 @endsection
 

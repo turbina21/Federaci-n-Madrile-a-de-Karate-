@@ -36,25 +36,38 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>CÓDIGO EVENTO:</strong>
-                <input type="text" name="EVECODIGO" class="form-control" placeholder="Código Inscripción">
+                <select class="form-control" name="EVECODIGO" id="EVECODIGO">
+                    @php
+                    use App\Evento;
+                    $eventos = Evento::all();
+                    @endphp
+                    @foreach ($eventos as $evento)
+                    <option value="{{$evento->EVECODIGO}}">{{$evento->EVECODIGO}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>CÓDIGO TRIBUNAL:</strong>
-                <input type="text" name="TRICODIGO" class="form-control" placeholder="Código Inscripción">
+                <select class="form-control" name="TRICODIGO" id="TRICODIGO">
+                    @php
+                    use App\Tribunal;
+                    $tribunales = Tribunal::all();
+                    @endphp
+                    @foreach ($tribunales as $tribunal)
+                    <option value="{{$tribunal->TRICODIGO}}">{{$tribunal->TRICODIGO}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>CATEGORÍA:</strong>
-                <input type="text" name="EXACATEGORIA" class="form-control" placeholder="Impedimento Físico" list="exampleList">
-                <datalist id="exampleList">
-                    <option value="A-PRIMER DAN">
-                    <option value="A-SEGUNDO DAN">
-                    <option value="A-TERCERDAN">
-                    <option value="B-CUARTODAN">
-                </datalist>
+                <select class="form-control" name="EXACATEGORIA" id="EXACATEGORIA">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -78,7 +91,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>OBSERVACIONES:</strong>
-                <input type="text" name="EXAOBSERVACIONES" class="form-control" placeholder="Informe"></input>
+                <textarea type="text" name="EXAOBSERVACIONES" class="form-control" placeholder="Informe"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

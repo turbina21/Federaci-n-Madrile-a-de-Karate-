@@ -7,7 +7,7 @@
             <h2>EDITAR EVENTOS</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('eventos.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('eventos.index') }}"> REGRESAR</a>
         </div>
     </div>
 </div>

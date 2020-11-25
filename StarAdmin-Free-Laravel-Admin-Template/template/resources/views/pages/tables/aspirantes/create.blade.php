@@ -59,8 +59,22 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>GRADO ACTUAL:</strong>
-                <input type="text" name="ASPGRADOACTUAL" class="form-control" placeholder="Grado Actual">
+                <label for="ASPGRADOACTUAL"></label><strong>GRADO ACTUAL:</strong>
+                
+                <select class="form-control" name="ASPGRADOACTUAL" id="ASPGRADOACTUAL">
+                    <option value="Cinturón Marrón">Cinturón Marrón</option>
+                    <option value="Cinturón Negro">Cinturón Negro</option>
+                    <option value="Primer Dan">Primer Dan</option>
+                    <option value="Segundo Dan">Segundo Dan</option>
+                    <option value="Tercer Dan">Tercer Dan</option>
+                    <option value="Cuarto Dan">Cuarto Dan</option>
+                    <option value="Quinto Dan">Quinto Dan</option>
+                    <option value="Sexto Dan">Sexto Dan</option>
+                    <option value="Séptimo Dan">Séptimo Dan</option>
+                    <option value="Octavo Dan">Octavo Dan</option>
+                    <option value="Noveno Dan">Noveno Dan</option>
+                    <option value="Décimo Dan">Décimo Dan</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

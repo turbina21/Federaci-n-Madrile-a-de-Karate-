@@ -7,7 +7,7 @@
             <h2>EDITAR CASOS ESPECIALES</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('casos.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('casos.index') }}"> REGRESAR</a>
         </div>
     </div>
 </div>
@@ -40,10 +40,18 @@
                 <input type="text" name="CASIMPEDIMENTOFISICO" value="{{ $casos->CASIMPEDIMENTOFISICO}}" class="form-control" placeholder="Impedimento Físico">
             </div>
         </div>
+        @php
+        $aux='';
+        if($casos->CASCERTIFICADOMEDICO==1){
+            $aux='checked';
+        }else{
+            $aux='';
+        }
+        @endphp
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>CERTIFICADO MÉDICO:</strong>
-                <input type="checkbox" name="CASCERTIFICADOMEDICO" value="{{ $casos->CASCERTIFICADOMEDICO }}" class="form-control" placeholder="Certificado Médico">
+                <input type="checkbox" name="CASCERTIFICADOMEDICO" <?php echo($aux)?> class="form-control" placeholder="Certificado Médico">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -55,7 +63,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>OBSERVACIONES:</strong>
-                <input type="text" name="CASOBSERVACION" value="{{ $casos->CASOBSERVACION }}" class="form-control" placeholder="Informe"></input>
+                <textarea type="text" name="CASOBSERVACION"  class="form-control" placeholder="Informe">{{ $casos->CASOBSERVACION }}</textarea>
             </div>
         </div>
 

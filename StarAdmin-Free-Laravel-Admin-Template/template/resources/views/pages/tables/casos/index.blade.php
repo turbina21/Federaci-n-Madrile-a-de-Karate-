@@ -30,7 +30,20 @@
               <tr>
                 <td>{{$caso->CASCODIGO}}</td>
                 <td>{{$caso->CASIMPEDIMENTOFISICO}}</td>
-                <td>{{$caso->CASCERTIFICADOMEDICO}}</td>
+                @php
+                $aux='';
+                $label='';
+                if($caso->CASCERTIFICADOMEDICO==1){
+                $aux='badge-success';
+                $label='SÍ';
+                }else{
+                $aux='badge-danger';
+                $label='NO';
+                }
+                @endphp
+                <td style="text-align: center; font-size:20px;">
+                  <label class="badge <?php echo ($aux) ?>">{{$label}}</label>
+                </td>
                 <td>{{$caso->CASASCENSOS}}</td>
                 <td>{{$caso->CASOBSERVACION}}</td>
                 <td>
@@ -451,7 +464,7 @@
       </div>
     </div>
   </div>
-  */?>
+  */ ?>
 </div>
 @endsection
 

@@ -34,34 +34,74 @@
                 <input type="text" name="REQCODIGO" value="{{ $requisitos->REQCODIGO }}" class="form-control" placeholder="Código">
             </div>
         </div>
+        @php
+        $aux1='';
+        if($requisitos->REQFOTOCOPIACARNET==1){
+        $aux1='checked';
+        }else{
+        $aux1='';
+        }
+        @endphp
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>FOTOCOPIA CARNET:</strong>
-                <input type="checkbox" name="REQFOTOCOPIACARNET" value="{{ $requisitos->REQFOTOCOPIACARNET }}" class="form-control" placeholder="Curriculum Visado">
+                <input type="checkbox" name="REQFOTOCOPIACARNET" <?php echo ($aux1) ?> class="form-control" placeholder="Curriculum Visado">
             </div>
         </div>
+        @php
+        $aux2='';
+        if($requisitos->REQFOTOCOPIACEDULA==1){
+        $aux2='checked';
+        }else{
+        $aux2='';
+        }
+        @endphp
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>FOTOCOPIA CÉDULA:</strong>
-                <input type="checkbox" name="REQFOTOCOPIACEDULA" value="{{ $requisitos->REQFOTOCOPIACEDULA }}" class="form-control" placeholder="Acreditación">
+                <input type="checkbox" name="REQFOTOCOPIACEDULA" <?php echo ($aux2) ?> class="form-control" placeholder="Acreditación">
             </div>
         </div>
+        @php
+        $aux3='';
+        if($requisitos->REQFOTOGRAFIAS==1){
+        $aux1='checked';
+        }else{
+        $aux3='';
+        }
+        @endphp
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>FOTOGRAFIAS:</strong>
-                <input type="checkbox" name="REQFOTOGRAFIAS" value="{{ $requisitos->REQFOTOGRAFIAS }}" class="form-control" placeholder="Copia de títulos">
+                <input type="checkbox" name="REQFOTOGRAFIAS" <?php echo ($aux3) ?> class="form-control" placeholder="Copia de títulos">
             </div>
         </div>
+        @php
+        $aux4='';
+        if($requisitos->REQSOLICITUD==1){
+        $aux4='checked';
+        }else{
+        $aux4='';
+        }
+        @endphp
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>SOLICITUD:</strong>
-                <input type="checkbox" name="REQSOLICITUD" value="{{ $requisitos->REQSOLICITUD }}" class="form-control" placeholder="Plan de estudio">
+                <input type="checkbox" name="REQSOLICITUD" <?php echo ($aux4) ?> class="form-control" placeholder="Plan de estudio">
             </div>
         </div>
+        @php
+        $aux5='';
+        if($requisitos->REQTRABAJO==1){
+        $aux5='checked';
+        }else{
+        $aux5='';
+        }
+        @endphp
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>TRABAJO:</strong>
-                <input type="checkbox" name="REQTRABAJO" value="{{ $requisitos->REQTRABAJO }}" class="form-control" placeholder="Plan de estudio">
+                <input type="checkbox" name="REQTRABAJO" <?php echo ($aux5) ?> class="form-control" placeholder="Plan de estudio">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

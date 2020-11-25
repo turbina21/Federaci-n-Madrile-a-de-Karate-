@@ -35,9 +35,48 @@
                 <td>{{$examen->EVECODIGO}}</td>
                 <td>{{$examen->TRICODIGO}}</td>
                 <td>{{$examen->EXACATEGORIA}}</td>
-                <td>{{$examen->EXACALIFICACIONTOTAL}}</td>
-                <td>{{$examen->EXABLOQUECOMUN}}</td>
-                <td>{{$examen->EXABLOQUEESPECÍFICO}}</td>
+                @php
+                $aux1='';
+                $label1='';
+                if($examen->EXACALIFICACIONTOTAL==1){
+                $aux1='badge-success';
+                $label1='APTO';
+                }else{
+                $aux1='badge-danger';
+                $label1='NO APTO';
+                }
+                @endphp 
+                <td style="text-align: center; font-size: 20px;">
+                  <label class="badge <?php echo ($aux1) ?>">{{$label1}}</label>
+                </td>
+                @php
+                $aux2='';
+                $label2='';
+                if($examen->EXABLOQUECOMUN==1){
+                $aux2='badge-success';
+                $label2='APTO';
+                }else{
+                $aux2='badge-danger';
+                $label2='NO APTO';
+                }
+                @endphp
+                <td style="text-align: center; font-size: 20px;">
+                  <label class="badge <?php echo ($aux2) ?>">{{$label2}}</label>
+                </td>
+                @php
+                $aux3='';
+                $label3='';
+                if($examen->EXABLOQUEESPECIFICO==1){
+                $aux3='badge-success';
+                $label3='APTO';
+                }else{
+                $aux3='badge-danger';
+                $label3='NO APTO';
+                }
+                @endphp
+                <td style="text-align: center; font-size: 20px;">
+                  <label class="badge <?php echo ($aux3) ?>">{{$label3}}</label>
+                </td>
                 <td>{{$examen->EXAOBSERVACIONES}}</td>
                 <td>
                   <form action="{{ route('examenes.destroy',$examen->EXACODIGO) }}" method="POST">

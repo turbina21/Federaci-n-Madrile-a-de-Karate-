@@ -36,7 +36,15 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>CÓDIGO TRIBUNAL:</strong>
-                <input type="text" name="TRICODIGO"  class="form-control" placeholder="Código Inscripción">
+                <select class="form-control" name="TRICODIGO" id="TRICODIGO">
+                    @php
+                    use App\Tribunal;
+                    $tribunales = Tribunal::all();
+                    @endphp
+                    @foreach ($tribunales as $tribunal)
+                    <option value="{{$tribunal->TRICODIGO}}">{{$tribunal->TRICODIGO}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

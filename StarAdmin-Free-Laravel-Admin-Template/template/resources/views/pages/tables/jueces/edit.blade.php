@@ -37,7 +37,15 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>CÓDIGO TRIBUNAL:</strong>
-                <input type="text" name="TRICODIGO" value="{{ $jueces->TRICODIGO }}" class="form-control" placeholder="Código Inscripción">
+                <select class="form-control" name="TRICODIGO" id="TRICODIGO">
+                    @php
+                    use App\Tribunal;
+                    $tribunales = Tribunal::all();
+                    @endphp
+                    @foreach ($tribunales as $tribunal)
+                    <option value="{{$tribunal->TRICODIGO}}">{{$tribunal->TRICODIGO}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -46,10 +54,18 @@
                 <input type="text" name="JUENOMBRE" value="{{ $jueces->JUENOMBRE}}" class="form-control" placeholder="PAÍS">
             </div>
         </div>
+        @php
+        $aux1='';
+        if($jueces->JUEDIPLOMA==1){
+        $aux1='checked';
+        }else{
+        $aux1='';
+        }
+        @endphp
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>DIPLOMA:</strong>
-                <input type="checkbox" name="JUEDIPLOMA" value="{{ $jueces->JUEDIPLOMA }}" class="form-control" placeholder="Curriculum Visado">
+                <input type="checkbox" name="JUEDIPLOMA" <?php echo ($aux1) ?> class="form-control" placeholder="Curriculum Visado">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -58,4 +74,7 @@
     </div>
 
 </form>
+<script>
+    document.querySelector("#TRICODIGO option[value='<?php echo ($jueces->TRICODIGO) ?>']").setAttribute('selected', true);
+</script>
 @endsection

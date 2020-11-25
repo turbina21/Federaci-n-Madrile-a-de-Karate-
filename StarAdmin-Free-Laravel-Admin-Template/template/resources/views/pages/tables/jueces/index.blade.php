@@ -30,7 +30,20 @@
                 <td>{{$juez->JUECEDULA}}</td>
                 <td>{{$juez->TRICODIGO}}</td>
                 <td>{{$juez->JUENOMBRE}}</td>
-                <td>{{$juez->JUEDIPLOMA}}</td>
+                @php
+                $aux1='';
+                $label1='';
+                if($juez->JUEDIPLOMA==1){
+                $aux1='badge-success';
+                $label1='SÍ';
+                }else{
+                $aux1='badge-danger';
+                $label1='NO';
+                }
+                @endphp
+                <td style="font-size: 20px;">
+                  <label class="badge <?php echo ($aux1) ?>">{{$label1}}</label>
+                </td>
                 <td>
                   <form action="{{ route('jueces.destroy',$juez->JUECEDULA) }}" method="POST">
 

@@ -58,16 +58,30 @@
                 <input type="text" name="ASPLICENCIA" value="{{ $aspirantes->ASPLICENCIA }}" class="form-control" placeholder="Licencia">
             </div>
         </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>GRADO ACTUAL:</strong>
-                <input type="text" name="ASPGRADOACTUAL" value="{{ $aspirantes->ASPGRADOACTUAL }}" class="form-control" placeholder="Grado Actual">
+                <select class="form-control"  name="ASPGRADOACTUAL" id="ASPGRADOACTUAL">
+                    <option value="Cinturón Marrón">Cinturón Marrón</option>
+                    <option value="Cinturón Negro">Cinturón Negro</option>
+                    <option value="Primer Dan">Primer Dan</option>
+                    <option value="Segundo Dan">Segundo Dan</option>
+                    <option value="Tercer Dan">Tercer Dan</option>
+                    <option value="Cuarto Dan">Cuarto Dan</option>
+                    <option value="Quinto Dan">Quinto Dan</option>
+                    <option value="Sexto Dan">Sexto Dan</option>
+                    <option value="Séptimo Dan">Séptimo Dan</option>
+                    <option value="Octavo Dan">Octavo Dan</option>
+                    <option value="Noveno Dan">Noveno Dan</option>
+                    <option value="Décimo Dan">Décimo Dan</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>FECHA DE GRADO ACTUAL:</strong>
-                <input type="date" name="ASPFECHAGRADOACTUAL" value="{{ $aspirantes->ASPFECHAGRADOACTUAL }}" class="form-control" placeholder="FechaGrado Actual">
+                <input type="date" name="ASPFECHAGRADOACTUAL" value="{{ $aspirantes->ASPGRADOACTUAL }}" class="form-control" placeholder="FechaGrado Actual">
             </div>
         </div>
 
@@ -77,4 +91,7 @@
     </div>
 
 </form>
+<script>
+    document.querySelector("#ASPGRADOACTUAL option[value='<?php echo($aspirantes->ASPGRADOACTUAL)?>']").setAttribute('selected',true);
+</script>
 @endsection

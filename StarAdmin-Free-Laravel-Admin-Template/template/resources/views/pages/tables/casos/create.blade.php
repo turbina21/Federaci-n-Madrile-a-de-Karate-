@@ -54,7 +54,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>OBSERVACIONES:</strong>
-                <input type="text" name="CASOBSERVACION" class="form-control" placeholder="Informe"></input>
+                <textarea type="text" name="CASOBSERVACION"  class="form-control" placeholder="Informe"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

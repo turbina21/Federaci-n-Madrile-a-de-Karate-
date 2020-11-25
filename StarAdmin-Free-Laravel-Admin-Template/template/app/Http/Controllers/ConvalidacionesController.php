@@ -50,9 +50,9 @@ class ConvalidacionesController extends Controller
                 'CONPAIS' => $request->CONPAIS,
                 'CONTIEMPOPERMANENCIA' => $request->CONTIEMPOPERMANENCIA,
                 'CONCURRICULUMVISADO' => $this->generateBool($request->CONCURRICULUMVISADO),
-                'CONACREDITACION' => $this->generateBool($request->CONCURRICULUMVISADO),
-                'CONCOPIATITULOS' => $this->generateBool($request->CONCURRICULUMVISADO),
-                'CONPLANESTUDIO' => $this->generateBool($request->CONCURRICULUMVISADO),
+                'CONACREDITACION' => $this->generateBool($request->CONACREDITACION),
+                'CONCOPIATITULOS' => $this->generateBool($request->CONCOPIATITULOS),
+                'CONPLANESTUDIO' => $this->generateBool($request->CONPLANESTUDIO),
             ]
         );
 
@@ -119,9 +119,9 @@ class ConvalidacionesController extends Controller
                 'CONPAIS' => $request->CONPAIS,
                 'CONTIEMPOPERMANENCIA' => $request->CONTIEMPOPERMANENCIA,
                 'CONCURRICULUMVISADO' => $this->generateBool($request->CONCURRICULUMVISADO),
-                'CONACREDITACION' => $this->generateBool($request->CONCURRICULUMVISADO),
-                'CONCOPIATITULOS' => $this->generateBool($request->CONCURRICULUMVISADO),
-                'CONPLANESTUDIO' => $this->generateBool($request->CONCURRICULUMVISADO),
+                'CONACREDITACION' => $this->generateBool($request->CONACREDITACION),
+                'CONCOPIATITULOS' => $this->generateBool($request->CONCOPIATITULOS),
+                'CONPLANESTUDIO' => $this->generateBool($request->CONPLANESTUDIO),
             ]
         );
 

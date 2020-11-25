@@ -239,6 +239,8 @@
         .switch-slide .switch-input:checked~.switch-label:after {
             left: 0;
         }
+
+        
     </style>
 </head>
 
@@ -345,7 +347,7 @@
             }
         }
 
-        
+
         //# sourceURL=pen.js
     </script>
 </body>

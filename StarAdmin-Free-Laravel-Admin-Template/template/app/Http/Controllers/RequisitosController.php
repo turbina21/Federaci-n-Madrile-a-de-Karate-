@@ -46,8 +46,8 @@ class RequisitosController extends Controller
             [
                 'REQCODIGO' => $request->REQCODIGO,
                 'REQFOTOCOPIACARNET' => $this->generateBool($request->REQFOTOCOPIACARNET),
-                'REQFOTOCOPOIACEDULA' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
-                'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
+                'REQFOTOCOPIACEDULA' => $this->generateBool($request->REQFOTOCOPIACEDULA),
+                'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOGRAFIAS),
                 'REQSOLICITUD' => $this->generateBool($request->REQSOLICITUD),
                 'REQTRABAJO' => $this->generateBool($request->REQTRABAJO),
             ]
@@ -112,8 +112,8 @@ class RequisitosController extends Controller
             [
                 'REQCODIGO' => $request->REQCODIGO,
                 'REQFOTOCOPIACARNET' => $this->generateBool($request->REQFOTOCOPIACARNET),
-                'REQFOTOCOPOIACEDULA' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
-                'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOCOPOIACEDULA),
+                'REQFOTOCOPIACEDULA' => $this->generateBool($request->REQFOTOCOPIACEDULA),
+                'REQFOTOGRAFIAS' => $this->generateBool($request->REQFOTOGRAFIAS),
                 'REQSOLICITUD' => $this->generateBool($request->REQSOLICITUD),
                 'REQTRABAJO' => $this->generateBool($request->REQTRABAJO),
             ]

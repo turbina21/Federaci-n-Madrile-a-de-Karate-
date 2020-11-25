@@ -55,7 +55,7 @@ class CasosEspecialesController extends Controller
         $casos = Caso::create(
             [
                 'CASCODIGO' => $request->CASCODIGO,
-                'CASIMPEDIMENTOFISICO' => $request->CASCODIGO,
+                'CASIMPEDIMENTOFISICO' => $request->CASIMPEDIMENTOFISICO,
                 'CASCERTIFICADOMEDICO' => $this->generateBool($request->CASCERTIFICADOMEDICO),
                 'CASASCENSOS' =>$request->CASASCENSOS,
                 'CASOBSERVACION' =>$request->CASOBSERVACION,
@@ -100,7 +100,7 @@ class CasosEspecialesController extends Controller
      */
     public function update(Request $request, $CASCODIGO)
     {
-
+        //dd($request);
         $request->validate([
             'CASCODIGO' => 'bail|required|max:7',
             'CASIMPEDIMENTOFISICO' => 'bail|nullable|max:30',
@@ -111,7 +111,7 @@ class CasosEspecialesController extends Controller
         $casos = Caso::findOrFail($CASCODIGO);
         $casos->update([
             'CASCODIGO' => $request->CASCODIGO,
-            'CASIMPEDIMENTOFISICO' => $request->CASCODIGO,
+            'CASIMPEDIMENTOFISICO' => $request->CASIMPEDIMENTOFISICO,
             'CASCERTIFICADOMEDICO' => $this->generateBool($request->CASCERTIFICADOMEDICO),
             'CASASCENSOS' =>$request->CASASCENSOS,
             'CASOBSERVACION' =>$request->CASOBSERVACION,
