@@ -33,7 +33,7 @@
           </div>
           <div class="form-group">
             <div class="input-group">
-              <input type="password" name="email" class="form-control" placeholder="Password">
+              <input type="password" name="password" class="form-control" placeholder="Password">
               <div class="input-group-append">
                 <span class="input-group-text">
                   <i class="mdi mdi-check-circle-outline"></i>

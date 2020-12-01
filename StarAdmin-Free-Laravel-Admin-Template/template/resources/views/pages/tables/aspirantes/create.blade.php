@@ -23,6 +23,11 @@
 </div>
 @endif
 
+@if(session('error'))
+<div class="alert alert-warning" role="alert">
+    {{session('error')}} 
+</div>
+@endif
 <form action="{{ route('aspirantes.store') }}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
 

@@ -37,8 +37,8 @@
         </div>
       </div>
     </li>
-    <li class="nav-item {{ active_class(['/']) }}">
-      <a class="nav-link" href="{{ url('/') }}">
+    <li class="nav-item {{ active_class(['/dashboard']) }}">
+      <a class="nav-link" href="{{ url('/dashboard') }}">
         <i class="menu-icon mdi mdi-television"></i>
         <span class="menu-title">Dashboard</span>
       </a>

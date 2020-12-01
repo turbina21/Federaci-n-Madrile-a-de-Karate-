@@ -4,6 +4,11 @@
 @endpush
 
 @section('content')
+@if(session('success'))
+<div class="alert alert-success" role="alert">
+    {{session('success')}} 
+</div>
+@endif
 <div class="row">
   <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
@@ -40,13 +45,13 @@
                 <td>
                   <form action="{{ route('aspirantes.destroy',$aspirante->ASPCEDULA) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('aspirantes.show',$aspirante->ASPCEDULA) }}">VER</a>
+                    <a class="btn btn-secondary btn-icons btn-rounded"  href="{{ route('aspirantes.show',$aspirante->ASPCEDULA) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
-                    <a class="btn btn-primary" href="{{ route('aspirantes.edit',$aspirante->ASPCEDULA) }}">EDITAR</a>
+                    <a class="btn btn-warning btn-icons btn-rounded" href="{{ route('aspirantes.edit',$aspirante->ASPCEDULA) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    <button type="submit" class="btn btn-danger btn-icons btn-rounded"><i class="menu-icon mdi mdi-delete"></i></button>
                   </form>
                 </td>
               </tr>

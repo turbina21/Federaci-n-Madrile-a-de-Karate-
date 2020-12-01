@@ -14,6 +14,8 @@
         <div class="pull-right" style="text-align: right;">
           <a class="btn btn-success" href="{{ route('eventos.create') }}"> AÑADIR EVENTOS</a>
         </div>
+        <?php
+        /*
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
@@ -44,10 +46,13 @@
                   </form>
                 </td>
               </tr>
+
+
               @endforeach
             </tbody>
           </table>
-        </div>
+        </div>*/
+        ?>
       </div>
     </div>
   </div>
@@ -449,8 +454,41 @@
       </div>
     </div>
   </div>
-  */?>
+  */ ?>
 </div>
+<div class="row">
+  @foreach ($eventos as $evento)
+  <div class="col-md-6 col-xl-4 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Evento: {{$evento->EVECODIGO}}</h4>
+        <div class="shedule-list d-flex align-items-center justify-content-between mb-3">
+          <h3>{{$evento->EVEFECHA}}</h3>
+        </div>
+        <div class="event border-bottom py-3">
+          <div class="d-flex align-items-center">
+            <div class="badge badge-success">{{$evento->EVEHORA}}</div>
+            <small class="text-muted ml-2">{{$evento->EVELUGAR}}</small>
+            <div class="image-grouped ml-auto">
+              <form action="{{ route('eventos.destroy',$evento->EVECODIGO) }}" method="POST">
+
+                <a class="btn btn-secondary btn-icons btn-rounded" href="{{ route('eventos.show',$evento->EVECODIGO) }}"><i class="menu-icon mdi mdi-eye"></i></a>
+
+                <a class="btn btn-warning btn-icons btn-rounded" href="{{ route('eventos.edit',$evento->EVECODIGO) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
+
+                {{ method_field('DELETE')  }}
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-danger btn-icons btn-rounded"><i class="menu-icon mdi mdi-delete"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endforeach
+</div>
+
 @endsection
 
 @push('plugin-scripts')

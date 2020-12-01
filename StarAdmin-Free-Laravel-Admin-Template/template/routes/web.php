@@ -11,14 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 });
 Route::resource('login', 'LoginController');
 
-Route::get('register', function () {
-    return view('auth.register');
-});
+Route::resource('register', 'RegisterController');
 
 // Route::get('/','DashboardController@index');
 
@@ -146,9 +144,10 @@ Route::get('/clear-cache', function() {
 });
 
 // 404 for undefined routes
-Route::any('/{page?}',function(){
+/*Route::any('/{page?}',function(){
     return View::make('pages.error-pages.error-404');
-})->where('page','.*');
+})->where('page','.*');*/
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
