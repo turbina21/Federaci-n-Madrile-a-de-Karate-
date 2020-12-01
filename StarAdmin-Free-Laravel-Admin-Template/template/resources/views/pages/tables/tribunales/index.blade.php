@@ -30,13 +30,13 @@
                 <td>
                   <form action="{{ route('tribunales.destroy',$tribunal->TRICODIGO) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('tribunales.show',$tribunal->TRICODIGO) }}">VER</a>
+                    <a class="btn btn-secondary btn-icons btn-rounded" href="{{ route('tribunales.show',$tribunal->TRICODIGO) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
-                    <a class="btn btn-primary" href="{{ route('tribunales.edit',$tribunal->TRICODIGO) }}">EDITAR</a>
+                    <a class="btn btn-primary btn-icons btn-rounded" href="{{ route('tribunales.edit',$tribunal->TRICODIGO) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    <button type="submit" class="btn btn-danger btn-icons btn-rounded"><i class="menu-icon mdi mdi-delete"></i></button>
                   </form>
                 </td>
               </tr>
@@ -445,7 +445,7 @@
       </div>
     </div>
   </div>
-  */?>
+  */ ?>
 </div>
 @endsection
 

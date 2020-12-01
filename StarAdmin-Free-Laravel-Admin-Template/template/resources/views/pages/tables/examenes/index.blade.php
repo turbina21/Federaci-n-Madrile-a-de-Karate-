@@ -80,14 +80,13 @@
                 <td>{{$examen->EXAOBSERVACIONES}}</td>
                 <td>
                   <form action="{{ route('examenes.destroy',$examen->EXACODIGO) }}" method="POST">
+                    <a class="btn btn-secondary btn-icons btn-rounded" href="{{ route('examenes.show',$examen->EXACODIGO) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
-                    <a class="btn btn-info" href="{{ route('examenes.show',$examen->EXACODIGO) }}">VER</a>
-
-                    <a class="btn btn-primary" href="{{ route('examenes.edit',$examen->EXACODIGO) }}">EDITAR</a>
+                    <a class="btn btn-primary btn-icons btn-rounded" href="{{ route('examenes.edit',$examen->EXACODIGO) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    <button type="submit" class="btn btn-danger btn-icons btn-rounded"><i class="menu-icon mdi mdi-delete"></i></button>
                   </form>
                 </td>
               </tr>

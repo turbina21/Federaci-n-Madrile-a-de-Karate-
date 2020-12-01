@@ -103,13 +103,13 @@
                 <td>
                   <form action="{{ route('requisitos.destroy',$requisito->REQCODIGO) }}" method="POST">
 
-                    <a class="btn btn-info" href="{{ route('requisitos.show',$requisito->REQCODIGO) }}">VER</a>
+                    <a class="btn btn-secondary btn-icons btn-rounded" href="{{ route('requisitos.show',$requisito->REQCODIGO) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
-                    <a class="btn btn-primary" href="{{ route('requisitos.edit',$requisito->REQCODIGO) }}">EDITAR</a>
+                    <a class="btn btn-primary btn-icons btn-rounded" href="{{ route('requisitos.edit',$requisito->REQCODIGO) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    <button type="submit" class="btn btn-danger btn-icons btn-rounded"><i class="menu-icon mdi mdi-delete"></i></button>
                   </form>
                 </td>
               </tr>

@@ -47,7 +47,7 @@
 
                     <a class="btn btn-secondary btn-icons btn-rounded"  href="{{ route('aspirantes.show',$aspirante->ASPCEDULA) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
-                    <a class="btn btn-warning btn-icons btn-rounded" href="{{ route('aspirantes.edit',$aspirante->ASPCEDULA) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
+                    <a class="btn btn-primary btn-icons btn-rounded" href="{{ route('aspirantes.edit',$aspirante->ASPCEDULA) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}

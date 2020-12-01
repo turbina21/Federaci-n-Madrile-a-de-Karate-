@@ -48,14 +48,13 @@
                 <td>{{$caso->CASOBSERVACION}}</td>
                 <td>
                   <form action="{{ route('casos.destroy',$caso->CASCODIGO) }}" method="POST">
+                    <a class="btn btn-secondary btn-icons btn-rounded"  href="{{ route('casos.show',$caso->CASCODIGO) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
-                    <a class="btn btn-info" href="{{ route('casos.show',$caso->CASCODIGO) }}">VER</a>
-
-                    <a class="btn btn-primary" href="{{ route('casos.edit',$caso->CASCODIGO) }}">EDITAR</a>
+                    <a class="btn btn-primary btn-icons btn-rounded" href="{{ route('casos.edit',$caso->CASCODIGO) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    <button type="submit" class="btn btn-danger btn-icons btn-rounded"><i class="menu-icon mdi mdi-delete"></i></button>
                   </form>
                 </td>
               </tr>

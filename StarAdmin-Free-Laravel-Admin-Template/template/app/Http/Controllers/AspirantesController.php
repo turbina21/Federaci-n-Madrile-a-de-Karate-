@@ -35,19 +35,8 @@ class AspirantesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
-    public function store(Request $request)
+    public function validateAgeDan(Request $request)
     {
-        $request->validate([
-            'ASPCEDULA' => 'bail|required|max:13',
-            'ASPNOMBRE' => 'bail|required|max:30',
-            'ASPAPELLIDO' => 'bail|required|max:30',
-            'ASPFECHANACIMIENTO' => 'bail|required|',
-            'ASPLICENCIA' => 'bail|required|max:10',
-            'ASPGRADOACTUAL' => 'bail|required|max:20',
-            'ASPFECHAGRADOACTUAL' => 'bail|required',
-        ]);
-
         $categoria = $request->ASPGRADOACTUAL;
         $categoryValue = '';
         switch ($categoria) {
@@ -92,32 +81,50 @@ class AspirantesController extends Controller
         $date_now = date_create("now");
         $birthday = date_create($request->ASPFECHANACIMIENTO);
         $age = date_diff($date_now, $birthday)->y;
+        
         //dd($age);
         if ($age < 18 && $categoryValue >= 3) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 21 && $categoryValue >= 4) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 30 && $categoryValue >= 5) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 40 && $categoryValue >= 6) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 45 && $categoryValue >= 7) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 50 && $categoryValue >= 8) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 55 && $categoryValue >= 9) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 60 && $categoryValue >= 10) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
+            return false;
         } elseif ($age < 65 && $categoryValue >= 11) {
-            return redirect()->back()->with('error', 'No cumple con la edad necesaria para inscribirse en la categoría: ' . $categoria);
-        } else {
+            return false;
+        }else{
+            return true;
+        }
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'ASPCEDULA' => 'bail|required|max:13',
+            'ASPNOMBRE' => 'bail|required|max:30',
+            'ASPAPELLIDO' => 'bail|required|max:30',
+            'ASPFECHANACIMIENTO' => 'bail|required|',
+            'ASPLICENCIA' => 'bail|required|max:10',
+            'ASPGRADOACTUAL' => 'bail|required|max:20',
+            'ASPFECHAGRADOACTUAL' => 'bail|required',
+        ]);
+
+        if($this->validateAgeDan($request)){
             $aspirantes = Aspirante::create($request->all());
-
-
             return redirect()->route('aspirantes.index')
                 ->with('success', 'Aspirante registrado con éxito.');
+        }else{
+            return redirect()->back()->with('error', 'No cumple con la edad mínima necesaria para inscribirse en la categoría: ' . $request->ASPGRADOACTUAL);
         }
+       
     }
 
     /**

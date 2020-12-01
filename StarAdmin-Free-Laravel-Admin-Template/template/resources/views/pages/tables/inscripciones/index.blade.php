@@ -41,14 +41,13 @@
                 <td>{{$inscripcion->INSGRADO}}</td>
                 <td>
                   <form action="{{ route('inscripciones.destroy',$inscripcion->INSCODIGO) }}" method="POST">
+                    <a class="btn btn-secondary btn-icons btn-rounded" href="{{ route('inscripciones.show',$inscripcion->INSCODIGO) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
-                    <a class="btn btn-info" href="{{ route('inscripciones.show',$inscripcion->INSCODIGO) }}">VER</a>
-
-                    <a class="btn btn-primary" href="{{ route('inscripciones.edit',$inscripcion->INSCODIGO) }}">EDITAR</a>
+                    <a class="btn btn-primary btn-icons btn-rounded" href="{{ route('inscripciones.edit',$inscripcion->INSCODIGO) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}
-                    <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                    <button type="submit" class="btn btn-danger btn-icons btn-rounded"><i class="menu-icon mdi mdi-delete"></i></button>
                   </form>
                 </td>
               </tr>
@@ -457,7 +456,7 @@
       </div>
     </div>
   </div>
-  */?>
+  */ ?>
 </div>
 @endsection
 
