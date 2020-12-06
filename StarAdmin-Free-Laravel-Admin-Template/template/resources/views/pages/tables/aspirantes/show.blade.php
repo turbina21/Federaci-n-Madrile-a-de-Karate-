@@ -1,4 +1,4 @@
-@extends('pages.tables.aspirantes.layout')
+@extends('pages.tables.aspirantes.layout') 
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">

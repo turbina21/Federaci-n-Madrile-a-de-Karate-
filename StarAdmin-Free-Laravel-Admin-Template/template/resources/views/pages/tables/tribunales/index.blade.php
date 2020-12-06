@@ -33,6 +33,7 @@
                     <a class="btn btn-secondary btn-icons btn-rounded" href="{{ route('tribunales.show',$tribunal->TRICODIGO) }}"><i class="menu-icon mdi mdi-eye"></i></a>
 
                     <a class="btn btn-primary btn-icons btn-rounded" href="{{ route('tribunales.edit',$tribunal->TRICODIGO) }}"><i class="menu-icon mdi mdi-lead-pencil"></i></a>
+                    
 
                     {{ method_field('DELETE')  }}
                     {{ csrf_field() }}

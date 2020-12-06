@@ -65,7 +65,7 @@
         @php
         $aux3='';
         if($requisitos->REQFOTOGRAFIAS==1){
-        $aux1='checked';
+        $aux3='checked';
         }else{
         $aux3='';
         }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tribunal;
+use App\Examen;
 use Illuminate\Http\Request;
 
 class TribunalesController extends Controller
@@ -95,6 +96,7 @@ class TribunalesController extends Controller
             ->with('success', 'Tribunal updated successfully');
     }
 
+   
     /**
      * Remove the specified resource from storage.
      *

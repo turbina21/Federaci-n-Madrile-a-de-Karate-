@@ -101,7 +101,7 @@
         </div>
         @php
         $aux3='';
-        if($examenes->EXABLOQUECOMUN==1){
+        if($examenes->EXABLOQUEESPECIFICO==1){
         $aux3='checked';
         }else{
         $aux3='';

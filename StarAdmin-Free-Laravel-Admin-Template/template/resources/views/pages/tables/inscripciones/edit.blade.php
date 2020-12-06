@@ -23,6 +23,12 @@
 </div>
 @endif
 
+@if(session('error'))
+<div class="alert alert-warning" role="alert">
+    {{session('error')}} 
+</div>
+@endif
+
 <form action="{{ route('inscripciones.update',$inscripciones->INSCODIGO )}}" method="POST" enctype="multipart/form-data">
     {{ method_field('PUT')  }}
     {{ csrf_field() }}
@@ -40,6 +46,10 @@
                 <select class="form-control" name="EXACODIGO" id="EXACODIGO">
                     @php
                     use App\Examen;
+                    use App\Requisito;
+                    use App\Convalidacion;
+                    use App\Aspirante;
+                    use App\Caso;
                     $examenes = Examen::all();
                     @endphp
                     @foreach ($examenes as $examen)
@@ -53,9 +63,10 @@
                 <strong>CÓDIGO REQUISITO:</strong>
                 <select class="form-control" name="REQCODIGO" id="REQCODIGO">
                     @php
-                    use App\Requisito;
+                    
                     $requisitos = Requisito::all();
                     @endphp
+                    <option value="null"></option>
                     @foreach ($requisitos as $requisito)
                     <option value="{{$requisito->REQCODIGO}}">{{$requisito->REQCODIGO}}</option>
                     @endforeach
@@ -67,7 +78,7 @@
                 <strong>CÓDIGO CONVALIDACIÓN:</strong>
                 <select class="form-control" name="CONCODIGO" id="CONCODIGO">
                     @php
-                    use App\Convalidacion;
+                    
                     $convalidaciones = Convalidacion::all();
                     @endphp
                     <option value="null"></option>
@@ -82,11 +93,11 @@
                 <strong>CÉDULA ASPIRANTE:</strong>
                 <select class="form-control" name="ASPCEDULA" id="ASPCEDULA">
                     @php
-                    use App\Aspirante;
+                    
                     $aspirantes = Aspirante::all();
                     @endphp
                     @foreach ($aspirantes as $aspirante)
-                    <option value="{{$aspirante->ASPCEDULA}}">{{$aspirante->ASPCEDULA}} - ({{$aspirante->ASPNOMBRE}} {{$aspirante->ASPAPELLIDO}})</option>
+                    <option value="{{$aspirante->ASPCEDULA}}">{{$aspirante->ASPCEDULA}} - ({{$aspirante->ASPNOMBRE}} {{$aspirante->ASPAPELLIDO}}) - ({{$aspirante->ASPGRADOACTUAL}})</option>
                     @endforeach
                 </select>
             </div>
@@ -96,7 +107,7 @@
                 <strong>CÓDIGO CASO ESPECIAL:</strong>
                 <select class="form-control" name="CASCODIGO" id="CASCODIGO">
                     @php
-                    use App\Caso;
+                    
                     $casos = Caso::all();
                     @endphp
                     <option value="null"></option>
@@ -144,5 +155,6 @@
     document.querySelector("#CONCODIGO option[value='<?php echo ($inscripciones->CONCODIGO) ?>']").setAttribute('selected', true);
     document.querySelector("#ASPCEDULA option[value='<?php echo ($inscripciones->ASPCEDULA) ?>']").setAttribute('selected', true);
     document.querySelector("#CASCODIGO option[value='<?php echo ($inscripciones->CASCODIGO) ?>']").setAttribute('selected', true);
+    document.querySelector("#INSGRADO option[value='<?php echo ($inscripciones->INSGRADO) ?>']").setAttribute('selected', true);
 </script>
 @endsection

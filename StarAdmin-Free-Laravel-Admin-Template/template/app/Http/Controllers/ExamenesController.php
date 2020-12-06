@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Examen;
+use App\Inscripcion;
+use App\Aspirante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ExamenesController extends Controller
 {
@@ -105,9 +108,12 @@ class ExamenesController extends Controller
         }
     }
 
+    
+
+
     public function update(Request $request, $EXACODIGO)
     {
-
+        
         $request->validate([
             'EXACODIGO' => 'bail|required|max:7',
             'EVECODIGO' => 'bail|required|max:7',
@@ -117,7 +123,7 @@ class ExamenesController extends Controller
         ]);
 
         $examenes = Examen::findOrFail($EXACODIGO);
-
+        
         $examenes->update(
             [
                 'EXACODIGO' => $request->EXACODIGO,
@@ -131,6 +137,20 @@ class ExamenesController extends Controller
             ]
         );
 
+        if($request->EXACALIFICACIONTOTAL ){
+            $inscripcion = DB::table('inscripcions')->where('EXACODIGO', $request->EXACODIGO)->get();
+            $inscripcion2= Inscripcion::findOrFail($inscripcion[0]->INSCODIGO);
+            $aspiranteID = DB::table('aspirantes')->select('ASPCEDULA')->where('ASPCEDULA', $inscripcion[0]->ASPCEDULA)->get();
+            $aspirante= Aspirante::findOrFail($aspiranteID[0]->ASPCEDULA);
+            $currentDateTime = date('Y-m-d');
+            $aspirante->update(
+                [
+                    'ASPGRADOACTUAL' => $inscripcion[0]->INSGRADO,
+                    'ASPFECHAGRADOACTUAL' => $currentDateTime,
+                ]
+            );
+        }
+        
         return redirect()->route('examenes.index')
             ->with('success', 'Examen updated successfully');
     }

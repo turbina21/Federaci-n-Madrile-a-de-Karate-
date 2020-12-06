@@ -22,7 +22,11 @@
     </ul>
 </div>
 @endif
-
+@if(session('error'))
+<div class="alert alert-warning" role="alert">
+    {{session('error')}}
+</div>
+@endif
 <form action="{{ route('aspirantes.update',$aspirantes->ASPCEDULA )}}" method="POST" enctype="multipart/form-data">
     {{ method_field('PUT')  }}
     {{ csrf_field() }}
@@ -58,11 +62,11 @@
                 <input type="text" name="ASPLICENCIA" value="{{ $aspirantes->ASPLICENCIA }}" class="form-control" placeholder="Licencia">
             </div>
         </div>
-        
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>GRADO ACTUAL:</strong>
-                <select class="form-control"  name="ASPGRADOACTUAL" id="ASPGRADOACTUAL">
+                <select class="form-control" name="ASPGRADOACTUAL" id="ASPGRADOACTUAL">
                     <option value="Cinturón Marrón">Cinturón Marrón</option>
                     <option value="Cinturón Negro">Cinturón Negro</option>
                     <option value="Primer Dan">Primer Dan</option>
@@ -81,7 +85,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>FECHA DE GRADO ACTUAL:</strong>
-                <input type="date" name="ASPFECHAGRADOACTUAL" value="{{ $aspirantes->ASPGRADOACTUAL }}" class="form-control" placeholder="FechaGrado Actual">
+                <input type="date" name="ASPFECHAGRADOACTUAL" value="{{ $aspirantes->ASPFECHAGRADOACTUAL }}" class="form-control" placeholder="FechaGrado Actual">
             </div>
         </div>
 
@@ -92,6 +96,6 @@
 
 </form>
 <script>
-    document.querySelector("#ASPGRADOACTUAL option[value='<?php echo($aspirantes->ASPGRADOACTUAL)?>']").setAttribute('selected',true);
+    document.querySelector("#ASPGRADOACTUAL option[value='<?php echo ($aspirantes->ASPGRADOACTUAL) ?>']").setAttribute('selected', true);
 </script>
 @endsection

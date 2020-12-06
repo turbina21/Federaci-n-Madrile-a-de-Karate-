@@ -18,6 +18,7 @@ Route::resource('login', 'LoginController');
 
 Route::resource('register', 'RegisterController');
 
+
 // Route::get('/','DashboardController@index');
 
 Route::group(['prefix' => 'basic-ui'], function(){

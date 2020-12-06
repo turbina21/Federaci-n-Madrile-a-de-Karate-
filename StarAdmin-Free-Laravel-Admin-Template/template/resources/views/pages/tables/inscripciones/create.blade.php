@@ -1,13 +1,13 @@
-@extends('pages.tables.aspirantes.layout')
+@extends('pages.tables.inscripciones.layout')
 
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>AÑADIR ASPIRANTE</h2>
+            <h2>AÑADIR INSCRIPCIÓN</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('aspirantes.index') }}"> Regresar</a>
+            <a class="btn btn-primary" href="{{ route('inscripciones.index') }}"> Regresar</a>
         </div>
     </div>
 </div>
@@ -23,6 +23,11 @@
 </div>
 @endif
 
+@if(session('error'))
+<div class="alert alert-warning" role="alert">
+    {{session('error')}} 
+</div>
+@endif
 <form action="{{ route('inscripciones.store') }}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
 
@@ -55,6 +60,7 @@
                     use App\Requisito;
                     $requisitos = Requisito::all();
                     @endphp
+                    <option value="null"></option>
                     @foreach ($requisitos as $requisito)
                     <option value="{{$requisito->REQCODIGO}}">{{$requisito->REQCODIGO}}</option>
                     @endforeach
@@ -85,7 +91,7 @@
                     $aspirantes = Aspirante::all();
                     @endphp
                     @foreach ($aspirantes as $aspirante)
-                    <option value="{{$aspirante->ASPCEDULA}}">{{$aspirante->ASPCEDULA}} - ({{$aspirante->ASPNOMBRE}} {{$aspirante->ASPAPELLIDO}})</option>
+                    <option value="{{$aspirante->ASPCEDULA}}">{{$aspirante->ASPCEDULA}} - ({{$aspirante->ASPNOMBRE}} {{$aspirante->ASPAPELLIDO}}) - ({{$aspirante->ASPGRADOACTUAL}})</option>
                     @endforeach
                 </select>
             </div>
@@ -111,6 +117,7 @@
                 <input type="date" name="INSFECHA"  class="form-control" placeholder="Grado Actual">
             </div>
         </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>GRADO:</strong>
